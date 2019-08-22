@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Current Listings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<!-- The ion-card displays all of the items in the array or database in a card format. -->
+<ion-content>
+    <div class="ion-padding">
+
+           <ion-card color="medium" *ngFor="let cards of loadItems(); let i = index">
+            <ion-card-header>
+              <ion-card-title>Address: {{cards.address}}</ion-card-title>
+              <ion-card-subtitle>Price: ${{cards.price}}</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+              {{cards.description}}
+            </ion-card-content>
+
+            <!-- These are the native social sharing buttons. -->
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <button ion-button icon-only (click)="regularShare(i)" color="medium" clear>
+                <ion-icon class="share-icon" name="share"></ion-icon>
+              </button>
+              </ion-col>
+            <ion-col>
+              <button ion-button icon-only (click)="whatsappShare(i)" color="light" clear>
+            <ion-icon class="share-icon" name="logo-whatsapp"></ion-icon>
+          </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-only (click)="facebookShare(i)" color="light" clear>
+            <ion-icon  class="share-icon" name="logo-facebook"></ion-icon>
+          </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-only (click)="twitterShare(i)" color="light" clear>
+            <ion-icon class="share-icon" name="logo-twitter"></ion-icon>
+          </button>
+            </ion-col>
+            </ion-row>
+            </ion-grid>
+            <img src="https://wp.zillowstatic.com/3/shutterstock_50097079-2ec9cc-630x420.jpg">
+          </ion-card>
+
+
+    </div>
+  </ion-content>
+
